@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100vw;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.icono {
+  display: block;
+  z-index: 100000000;
+  animation: moverIzquierda 1s ease-in;
+}
+
+header {
+  background: #0f2027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: calc(100vh - 150px); /* Restamos la altura de la ola */
+  padding: 48px;
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+}
+
+.container {
+  width: 95%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+}
+
+img {
+  display: block;
+  height: 400px;
+  object-fit: cover;
+  animation: arriba 1s ease-in;
+}
+
+.textos {
+  width: 50%;
+  color: white;
+}
+
+.textos h1 {
+  font-size: 50px;
+  font-weight: 300;
+  animation: moverDerecha 1s ease-in;
+}
+
+.textos h2 {
+  font-size: 20px;
+  font-weight: 300;
+  animation: moverIzquierda 1s ease-in;
+}
+
+.textos a {
+  display: inline-block;
+  color: white;
+  font-weight: 300;
+  text-decoration: none;
+  margin-top: 30px;
+  border: 1px solid white;
+  width: 150px;
+  border-radius: 3px;
+  text-align: center;
+  padding: 10px 0;
+  animation: arriba 1s ease-in;
+}
+
+/* Configuración de la onda */
+.wave {
+  height: 100px;
+  width: 100%;
+  background: #0f2027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.enlaces {
+  position: fixed;
+  display: flex;
+  top: 0;
+  background-color: #0f2027;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  right: 0;
+  flex-direction: column;
+  width: 100%;
+  transition: all 1s ease;
+  background: #2c3e50; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #4ca1af,
+    #2c3e50
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #4ca1af,
+    #2c3e50
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.uno {
+  -webkit-clip-path: circle(0% at 0 0);
+  clip-path: circle(0% at 0 0);
+}
+
+.dos {
+  -webkit-clip-path: circle(150% at 0 0);
+  clip-path: circle(150% at 0 0);
+}
+
+@keyframes moverIzquierda {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moverDerecha {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes arriba {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  img {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  img {
+    height: 300px;
+  }
+  .textos h1 {
+    font-size: 40px;
+  }
+  .textos h2 {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  img {
+    height: 250px;
+  }
+  .textos h1 {
+    font-size: 25px;
+  }
+  .textos h2 {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .container {
+    width: 100%;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+  }
+  .textos {
+    width: 100%;
+    text-align: center;
+  }
+  .textos h1 {
+    font-size: 20px;
+  }
+  .textos h2 {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 315px) {
+  img {
+    height: 200px;
+  }
+  .textos a {
+    width: 120px;
+  }
+  .textos h1 {
+    font-size: 15px;
+  }
+  .textos h2 {
+    font-size: 10px;
+  }
+}
