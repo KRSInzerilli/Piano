@@ -11,40 +11,170 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700;800&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- Incluyendo EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <!-- Incluyendo GSAP y ScrollTo -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
   </head>
   <body>
-    <header>
+    <header id="inicio">
       <nav>
-        <a href="" id="icono" class="icono">Menu</a>
-        <div class="enlaces uno" id="enlaces">
-          <a href="">Inicio</a>
-          <a href="">Acerca de</a>
-          <a href="">Contacto</a>
+        <div class="nav-bar">
+          <a href="#inicio" id="icono" class="icono">Inicio</a>
+          <a href="#acerca" id="icono" class="icono">Sobre mí</a>
+          <a href="#clases" id="icono" class="icono">Clases</a>
+          <a href="#contacto" id="icono" class="icono">Contacto</a>
         </div>
       </nav>
       <div class="container">
         <div class="textos">
           <h1>Marcelo Yoel A. Inzerilli</h1>
           <h2>Pianista, concertista y compositor</h2>
-          <a href="#">Contacto</a>
+          <a href="#contacto" class="contacto-enlace">Contacto</a>
         </div>
         <img src="/img/img.png" alt="" />
       </div>
     </header>
-    <div class="wave">
-      <div style="height: 150px; overflow: hidden">
-        <svg
-          viewBox="0 0 500 150"
-          preserveAspectRatio="none"
-          style="height: 100%; width: 100%"
-        >
-          <path
-            d="M-0.00,49.85 C148.64,-35.92 282.95,81.20 500.00,49.85 L500.00,149.60 L-0.00,149.60 Z"
-            style="stroke: none; fill: rgb(27, 51, 60)"
-          ></path>
-        </svg>
+
+    <section id="acerca">
+      <h2>Sobre mí</h2>
+      <p>
+        Como pianista, compositor y profesor de música, he dedicado más de 14
+        años a la enseñanza de piano, teclado, lenguaje y teoría musical. Desde
+        siempre, la música ha sido una constante en mi vida, y con el tiempo
+        descubrí que, además de interpretar y crear mis propias obras, me
+        apasiona compartir ese conocimiento con otros.
+      </p>
+      <p>
+        Mi trayectoria como concertista me ha llevado a participar en una
+        variedad de eventos y a colaborar en proyectos que van desde la música
+        clásica hasta la creación de piezas originales para cine y otros medios.
+        Esta combinación de experiencias me permite ofrecer a mis estudiantes
+        una perspectiva enriquecida, ayudándoles a comprender la música no solo
+        como una forma de arte, sino también como un medio de expresión
+        personal.
+      </p>
+      <p>
+        En 2015, tuve el honor de ser seleccionado para participar en el
+        Festival Internacional de Música Académica de Santa Catarina en Brasil,
+        lo cual fue una experiencia enriquecedora que me permitió ampliar mis
+        horizontes artísticos y compartir con músicos de todo el mundo. Mi
+        objetivo principal es inspirar y guiar a quienes desean hacer de la
+        música parte de sus vidas, ya sea como un hobby, una pasión o una
+        carrera profesional.
+      </p>
+    </section>
+
+    <section id="clases">
+      <h2>Clases</h2>
+
+      <p>
+        A lo largo de mi carrera, he tenido el privilegio de enseñar a
+        estudiantes de diversas edades y nacionalidades, incluyendo EE. UU.,
+        España, México, y más.
+      </p>
+
+      <p>
+        Las clases son personalizadas y se adaptan a los intereses de cada
+        alumno, ya sea que deseen interpretar música de películas, improvisar, o
+        aprender a componer.
+      </p>
+
+      <p>
+        como profesor, me encargo de hacer las partituras y preparar el material
+        necesario para mis alumnos. Una vez finalizada la clase, se envía un
+        correo electrónico detallando los contenidos trabajados y videos
+        necesarios para practicar en la semana.
+      </p>
+
+      <p>
+        Las clases se realizan a través de Zoom, Skype o Google Meet, utilizando
+        múltiples cámaras y un micrófono de alta calidad para ofrecer una
+        experiencia inmersiva.
+      </p>
+
+      <p>
+        No importa si no tienes conocimientos previos, ya que mis clases están
+        diseñadas para todos los niveles. Los contenidos abarcan: Lectura y
+        escritura musical, canto y acompañamiento, improvisación, armonía,
+        interpretación, audioperceptiva y preparación para ingreso a
+        conservatorios y universidades.
+      </p>
+    </section>
+
+    <section id="contacto" class="section">
+      <h2 class="contact-title">Contacto</h2>
+      <div class="contact-container">
+        <div class="form-container">
+          <form id="form">
+            <label for="from_name">Nombre:</label>
+            <input type="text" name="from_name" id="from_name" required />
+
+            <div class="field">
+              <label for="to_name">Para:</label>
+              <input
+                type="text"
+                name="to_name"
+                id="to_name"
+                value="Yoel"
+                required
+                readonly
+              />
+            </div>
+            <div class="field">
+              <label for="reply_to">Correo Electrónico:</label>
+              <input type="email" name="reply_to" id="reply_to" required />
+            </div>
+            <div class="field">
+              <label for="message">Mensaje:</label>
+              <textarea name="message" id="message" required></textarea>
+            </div>
+            <button type="submit" id="button">Enviar</button>
+            <!-- Cambiado a un botón estilizado -->
+          </form>
+        </div>
+        <div class="social-container">
+          <h3>También puedes encontrarme en:</h3>
+          <ul>
+            <li>
+              <i class="fa-brands fa-whatsapp"></i>
+              <a
+                href="https://wa.me/5491149744689?text=Hola!%20me%20gustaría%20obtener%20más%20información%20sobre%20las%20clases%20de%20piano."
+                target="_blank"
+                >5491149744689</a
+              >
+            </li>
+            <li>
+              <i class="fa-brands fa-instagram"></i>
+              <a href="https://www.instagram.com/yoelinzerilli" target="_blank"
+                >yoelinzerilli</a
+              >
+            </li>
+            <li>
+              <i class="fa-brands fa-facebook"></i>
+              <a href="https://www.facebook.com/yoelinzerilli" target="_blank"
+                >Yoel Inzerilli</a
+              >
+            </li>
+            <li>
+              <i class="fa-brands fa-youtube"></i>
+              <a
+                href="https://www.youtube.com/@marceloyoelaugustoinzerilli"
+                target="_blank"
+                >Marcelo Yoel Augusto Inzerilli</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </section>
+
     <script src="/css/script.js"></script>
   </body>
 </html>
